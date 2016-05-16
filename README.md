@@ -2,6 +2,10 @@
 
 Git submodule support for Capistrano 3 [![Gem Version](https://badge.fury.io/rb/capistrano-git-submodule-strategy.svg)](http://badge.fury.io/rb/capistrano-git-submodule-strategy)
 
+## support
+
+git -version 1.9 and over
+
 ## Using
 
 ####Capfile
@@ -22,6 +26,11 @@ set :git_strategy, Capistrano::Git::SubmoduleStrategy
 Optionally you can keep git metadata (.git directory)
 ```ruby
 set :git_keep_meta, true
+```
+
+Optionally you can keep git submodule metadata (.git directory)`
+```ruby
+set :git_submodule_keep_meta, true
 ```
 
 ## Contributing to capistrano-git-submodule-strategy
