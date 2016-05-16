@@ -38,7 +38,7 @@ class Capistrano::Git
       unless context.test(:test, '-e', release_path) && context.test("ls -A #{release_path} | read linevar")
         git :clone, "--reference #{repo_path}", (fetch(:git_keep_meta, false) ? '' : '--depth=1'), '-b', fetch(:branch), repo_url, release_path
         context.within_only release_path do
-          git :submodule, 'update', '--init', fetch(:git_submodule_keep_meta,false) ? '' : '--depth 1', --recursive
+          git :submodule, 'update', '--init', fetch(:git_submodule_keep_meta,false) ? '' : '--depth 1', '--recursive'
         end
         unless fetch(:git_keep_meta, false)
           verbose = Rake.application.options.trace ? 'v' : ''
